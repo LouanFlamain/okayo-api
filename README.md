@@ -27,11 +27,13 @@ ouvrez docker et faites un "docker compose up --build -d" à la racine
 
 - créer un nouveau taux (à la création d'un nouveau taux celui ci est automatiquement mis par défault en base de donnée mais ça peut être modifié pour revenir à un ancien taux) : (post) "/api/tva"
 
+```
 data: {
 "tva_rate" : 0.55,
 "date_start" : "2025-01-01",
 "date_end" : "2025-12-31"
 }
+```
 
 - obtenir tout les taux : (get) "/api/tva"
 
@@ -44,7 +46,8 @@ data: {
 # customers
 
 - créer un client : (post) "/api/customer"
-  data: {
+```
+data: {
   "client_code" : "000-111",
   "first_name" : "louan",
   "last_name" : "flamain",
@@ -55,6 +58,7 @@ data: {
   "phone" : "email",
   "email" : "test@test.fr"
   }
+```
 
 - obtenir tout les clients : (get) "/api/customer
 
@@ -68,6 +72,7 @@ data: {
 
 - créer un produit : (post) "/api/product"
 
+```
 data: {
 "product_code" : "1233463",
 "name" : "produit 4",
@@ -75,6 +80,7 @@ data: {
 "price" : 12.34,
 "tva_rate" : 0.67 (taux de tva du produit custom optionnel, dans ce cas le taux pris sera le taux par défault de la table global "tva_rates")
 }
+```
 
 - récupérer tout les produits : (get) "/api/product"
 
@@ -87,6 +93,7 @@ data: {
 # facture
 
 - créer une facture : (post) "/api/invoice"
+  ```
   data : {
   "invoice_ref" : "1333",
   "biling_date" : "2024-03-17",
@@ -104,6 +111,7 @@ data: {
   }
   ]
   }
+  ```
 
 - récupérer toutes les factures : (get) "/api/invoice"
 
